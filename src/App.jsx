@@ -14,7 +14,7 @@ import Cart from './pages/Cart';
 
 function App() {
   const elements = useRoutes([
-    {path: 'login', index: true, element: <Login />},
+    {path: 'login', element: <Login />},
     {path: '/', 
     element: <Layout />,
     children: [
