@@ -1,0 +1,12 @@
+.col.button button {
+    float: right;
+}
+
+.row.card-car {
+    margin-top: 24px;
+}
+
+.row.card-car > div {
+    display: inline-block;
+    float: none;
+}

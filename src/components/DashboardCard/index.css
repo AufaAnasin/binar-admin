@@ -1,0 +1,30 @@
+.carimage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 31px 17px 31px 16px;
+}
+
+.card.car {
+    width: 351px;
+    height: 482px;
+}
+
+.card-img-top {
+    width: 270px;
+    height: 160px;
+    background-size: cover;
+    border-radius: 8px;
+}
+
+.card-text, 
+.card-text.card-price, 
+.card-text.car-price, 
+.card-text.car-updated {
+    margin-bottom: 16px;
+}
+
+.buttongroups {
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,0 +1,17 @@
+.page-direct{
+    font-size: 12px;
+}
+.col.form {
+    margin-top: 16px;
+    display: flex;
+}
+
+.col.form p {
+    padding-top: 10px;
+    width: 147px;
+}
+
+.form-control.add {
+    width: 339px;
+    margin-left: 8px;
+}

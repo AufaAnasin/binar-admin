@@ -1,0 +1,20 @@
+.bluebox-dashboard {
+    width: 4px;
+    height: 24px;
+    background-color: rgba(13, 40, 166, 1);
+    margin-right: 8px;
+}
+
+.rented-car-visualization {
+    display: flex;
+    flex-direction: row;
+}
+
+.dashboard-text {
+    font-family: Arial;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px; 
+    margin-top: 150px;
+}
