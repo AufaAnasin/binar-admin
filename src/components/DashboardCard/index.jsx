@@ -16,7 +16,7 @@ function DashBoardCard({name, image, price, category, update, editcarbutton, del
         <div className="card-text car-price"><FontAwesomeIcon icon={faUserGroup} style={{color: "#8A8A8A", width: "16px", height:"12px", marginRight: "3px"}} />{category}</div>
         <div className="card-text car-updated"><FontAwesomeIcon icon={faClock} style={{color: "#8A8A8A", width: "16px", height:"12px", marginRight: "3px"}} />Updated at {update}</div>
         <div className="buttongroups">
-          <button type="button" className="btn btn-outline-danger" onClick={deletecarbutton} style={{width: "143px"}}><FontAwesomeIcon icon={faTrash} style={{color: "red", width: "16px", height:"12px", marginRight: "3px"}} />Delete</button>
+          <button type="button" className="btn btn-outline-danger dbcard" onClick={deletecarbutton} style={{width: "143px"}}><FontAwesomeIcon icon={faTrash} style={{color: "red", width: "16px", height:"12px", marginRight: "3px"}} />Delete</button>
           <button type="button" className="btn btn-primary" onClick={editcarbutton} style={{marginLeft: "16px", width: "143px", height: "48px"}}><FontAwesomeIcon icon={faEdit} style={{color: "white", width: "16px", height:"12px", marginRight: "3px"}} />Edit</button>
         </div>
       </div>

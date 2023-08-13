@@ -1,0 +1,48 @@
+.ilustration-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-wrapper-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-button-delete {
+    width: 87px;
+    height: 36px;
+    margin: 0 16px 0 16px;
+    border-radius: 0;
+}
+
+.ilustration-wrapper img {
+    width: 153px;
+    height: 121px;
+}
+
+.ilustration-wrapper h5 {
+    margin: 24px 0 16px 0;
+    color: #000;
+    text-align: center;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; 
+}
+
+.ilustration-wrapper p {
+    color: #000;
+    text-align: center;
+    font-family: Arial;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    width: 323px;
+    height: 40px;
+}
+

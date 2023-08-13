@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect } from 'react';
 import { useState } from 'react'
+import { Toast } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom'
 
 function EditCar() {
@@ -30,8 +31,13 @@ function EditCar() {
   const [price, setPrice] = useState("")
   const [category, setCategory] = useState("")
   const [photo, setPhoto] = useState(null)
+
+  // status hanya untuk menyesuaikan API
   const [status, setStatus] = useState(false)
   const navigate = useNavigate();
+
+  // after edit succesfully
+  const [showToast, setShowToast] = useState(false);
 
   const handleChangeName = (e) => {
     setName(e.target.value);
@@ -72,15 +78,30 @@ function EditCar() {
     // karena kita ngeadd data, jadi kita menggunakan method post dari axios
     const api = `https://api-car-rental.binaracademy.org/admin/car/${id}`
     axios.put(api, formData, config
-    ).then((res) => console.log(res)).catch((err) => console.log(err));
+    ).then((res) => {
+      console.log(res)
+      setShowToast(true)
+    })
+    .catch((err) => console.log(err));
       setTimeout(() => {
         navigate('/dashboard')
-      }, 2000);
+      }, 3000);
   }
+  setTimeout(() => {
+    setShowToast(false);
+  }, 2000)
 
 
   return (
+    <>
     <div className="container">
+    {showToast && (
+        <Toast delay={3000} autohide>
+          <Toast.Body style={{ background: "green"}}>
+            Berhasil Edit
+          </Toast.Body>
+        </Toast>
+      )}
         <div className="row">
             <p className='page-direct'><strong>Cars &gt; List Cars &gt; </strong> Edit Cars</p>
             <h1>Edit Cars</h1>
@@ -123,6 +144,7 @@ function EditCar() {
             </form>
         </div>
     </div>
+    </>
   )
 }
 

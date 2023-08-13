@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -7,8 +8,12 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
+import StatisticTable from '../../components/StatisticTable';
 import './index.css'
+
 
 ChartJS.register(
   CategoryScale,
@@ -102,7 +107,26 @@ const labels = list.map((item) => item.day);
   ],
 };
 
+
 function Cart() {
+  const [dataList, setDataList] = useState([]);
+  const getData = () => {
+    const api = 'https://api-car-rental.binaracademy.org/admin/v2/order?page=1&pageSize=10';
+    axios.get(api, {
+      headers: {
+        // sesuaikan sama API
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'access_token': localStorage.getItem('admin_token')
+      }
+    }).then(
+        (res) => setDataList(res.data.orders))
+        .catch((err) => console.log(err));
+};
+
+    useEffect(() => {
+      getData()
+    }, []);
+
   return (
     <div className="container">
         <p style={{fontSize: "12px", marginTop: "32px"}}><strong>Dashboard &gt; </strong> Dashboard</p>
@@ -119,6 +143,7 @@ function Cart() {
               <div className="bluebox-dashboard" />
               <p><strong>List Order</strong></p>
             </div>
+            <StatisticTable dataList={dataList} />
         </div>
     </div>
   )
